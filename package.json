@@ -1,0 +1,38 @@
+{
+ "name": "abismo-de-cinzas",
+ "version": "1.0.0",
+ "description": "Dungeon crawler de a\u00e7\u00e3o",
+ "main": "desktop/main.js",
+ "scripts": {
+  "start": "electron .",
+  "build:win": "electron-builder --win --publish never",
+  "build:mac": "electron-builder --mac",
+  "build:linux": "electron-builder --linux"
+ },
+ "devDependencies": {
+  "electron": "^31.0.0",
+  "electron-builder": "^24.13.3"
+ },
+ "build": {
+  "appId": "com.abismo.cinzas",
+  "productName": "Abismo de Cinzas",
+  "files": [
+   "index.html",
+   "icons/**",
+   "desktop/**"
+  ],
+  "win": {
+   "target": [
+    "portable",
+    "nsis"
+   ],
+   "icon": "icons/icon-512.png"
+  },
+  "linux": {
+   "target": "AppImage",
+   "icon": "icons/icon-512.png"
+  },
+  "artifactName": "Abismo-de-Cinzas-${version}.${ext}"
+ },
+ "author": "Abismo"
+}
